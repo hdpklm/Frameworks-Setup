@@ -12,7 +12,7 @@
     ```
     GRAPH.LIST
     ```
-- ### GRAPH.query
+- ### GRAPH.QUERY
   - show every thing in a key
     ```
     GRAPH.QUERY [key] "MATCH (r) RETURN r"
@@ -42,6 +42,7 @@
     ```
     GRAPH.QUERY [key] "MATCH (:[type 1] {[key]:[value]})-[r:rides]->() DELETE r"
     ```
+- ### GRAPH.DELETE
   - delete [key]
     ```
     GRAPH.DELETE [key]
