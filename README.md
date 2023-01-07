@@ -33,7 +33,7 @@
     // t: is a pointer to all nodes has type_2
     GRAPH.QUERY [key] "MATCH (r:[type_1]), (t:[type_2]) WHERE r.name = 'Jose' and t.name = 'Luis' CREATE (r)-[:amigos]->(t)
     ```
-  - find by relation nad properties
+  - find by relation and properties
     ```
     // r: is a pointer to all nodes has type_1
     GRAPH.QUERY [key] "MATCH (r:[type_1])-[:[relation name]]->(t:[type 2] {[key]:[value]}) RETURN count(r)"
