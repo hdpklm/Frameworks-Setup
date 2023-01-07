@@ -1,7 +1,8 @@
-# redis-setup
+# redis-docker-setup
+```docker run -d -p 6379:6379 --name redis redis```
 
+# redis-commander-setup
 ```docker run --name redis-commander -d -p 8081:8081 --env REDIS_HOSTS=local:host.docker.internal:6379 ghcr.io/joeferner/redis-commander:latest```
-
 
 # Commands
 
