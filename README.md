@@ -23,24 +23,30 @@
     ```
   - change [data] inside [node]
     ```
-    GRAPH.QUERY [key] "MATCH(r:[type 1]) WHERE r.[prop]='[value]' SET r.[prop]='[new value]'" // can add [RETURN r]
-    GRAPH.QUERY [key] "CYPHER name='[new value]' MATCH(r:[type 1]) WHERE r.[prop]='[value]' SET r.[prop]=$name" // can add [RETURN r]
+    // r: is a pointer to all nodes has type_1
+    GRAPH.QUERY [key] "MATCH(r:[type_1]) WHERE r.[prop]='[value]' SET r.[prop]='[new value]'" // can add [RETURN r]
+    GRAPH.QUERY [key] "CYPHER name='[new value]' MATCH(r:[type 1]) WHERE r.[prop]='[value]' SET r.[prop]=$name"
     ```
   - Add Relation between two [nodes]
     ```
-    GRAPH.QUERY [key] "MATCH (r:[type 1]), (t:[type 2]) WHERE r.name = 'Jose' and t.name = 'Luis' CREATE (r)-[:amigos]->(t)
+    // r: is a pointer to all nodes has type_1
+    // t: is a pointer to all nodes has type_2
+    GRAPH.QUERY [key] "MATCH (r:[type_1]), (t:[type_2]) WHERE r.name = 'Jose' and t.name = 'Luis' CREATE (r)-[:amigos]->(t)
     ```
   - find by relation nad properties
     ```
-    GRAPH.QUERY [key] "MATCH (r:[type 1])-[:[relation name]]->(t:[type 2] {[key]:[value]}) RETURN count(r)"
+    // r: is a pointer to all nodes has type_1
+    GRAPH.QUERY [key] "MATCH (r:[type_1])-[:[relation name]]->(t:[type 2] {[key]:[value]}) RETURN count(r)"
     ```
   - delete [node]
     ```
-    GRAPH.QUERY [key] "MATCH (r:[type 1] {[key]:[value]}) DELETE r"
+    // r: is a pointer to all nodes has type_1
+    GRAPH.QUERY [key] "MATCH (r:[type_1] {[key]:[value]}) DELETE r"
     ```
   - delete [relation]
     ```
-    GRAPH.QUERY [key] "MATCH (:[type 1] {[key]:[value]})-[r:rides]->() DELETE r"
+    // r: is a pointer to all relation connected to type_1 with key value properties
+    GRAPH.QUERY [key] "MATCH (:[type_1] {[key]:[value]})-[r:rides]->() DELETE r"
     ```
 - ### GRAPH.DELETE
   - delete [key]
