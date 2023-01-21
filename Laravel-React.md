@@ -27,18 +27,49 @@ npm install autoprefixer@10.4.5 --save-exact
 ```
 npm i
 npm run dev
+npm run watch
 ```
 
 ## Relative React Path
 resources/js/components/Example.js
 - create or change Examle.js
 - Example.js use root div id "example" not "root" like react
+- `resources\js\app.js` have config initial file in react
 
 
 ## Add home page related to react
 - routes/web.php `add this line`
 ```
-Route::get('/react', function(){return view('react home blade file')]})->name('react');
+Route::get('/react', function(){return view('react');})->name('react');
+```
+
+## change initial react file
+- resources/js/components/Example.js
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Example() {
+	return (
+		<div className="container">
+			<div className="row justify-content-center">
+				<div className="col-md-8">
+					<div className="card">
+						<div className="card-header">Example Component</div>
+
+						<div className="card-body">I'm an example component!</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+export default Example;
+
+if (document.getElementById('root')) {
+	ReactDOM.render(<Example />, document.getElementById('root'));
+}
 ```
 
 ## add home page html blade
@@ -46,19 +77,17 @@ Route::get('/react', function(){return view('react home blade file')]})->name('r
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="icon" type="image/svg+xml" href="{{ asset('logo.ico') }}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Vite + React</title>
 	</head>
 
 	<body>
 		<div id="root"></div>
-		<script type="module" src="/src/main.jsx"></script>
+		<script type="module" src="{{ asset('js/app.js') }}"></script>
 	</body>
-
 </html>
 ```
 
