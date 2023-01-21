@@ -34,12 +34,24 @@ npm run watch
 resources/js/components/Example.js
 - create or change Examle.js
 - Example.js use root div id "example" not "root" like react
-- `resources\js\app.js` have config initial file in react
+- `resources/js/app.js` have config initial file in react
 
+## split React js and Vue js files
+- for react dir: disable `require('./react/app.js');` in `resources/js/app.js`
+- for default dir: disable `require('./components/app.js');` in `resources/js/app.js`
+- modify `webpack.mix.js`
+```js
+const mix = require('laravel-mix');
+mix
+	.js('resources/js/app.js', 'public/js')
+	.js('resources/js/react/app.js', 'public/js/react.js') // <-- add this line, it will create new file for react-js 
+	.react()
+	.sass('resources/sass/app.scss', 'public/css');
+```
 
 ## Add home page related to react
 - routes/web.php `add this line`
-```
+```php
 Route::get('/react', function(){return view('react');})->name('react');
 ```
 
@@ -86,7 +98,7 @@ if (document.getElementById('root')) {
 
 	<body>
 		<div id="root"></div>
-		<script type="module" src="{{ asset('js/app.js') }}"></script>
+		<script type="module" src="{{ asset('js/react.js') }}"></script>
 	</body>
 </html>
 ```
