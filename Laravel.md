@@ -9,3 +9,9 @@ cd project_name
 	```
 	php artisan serve
 	```
+
+- create database migration and Model
+	```
+	php artisan make:model [ModelName] --m
+	php artisan make:model [ModelName] --migration
+	```

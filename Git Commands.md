@@ -1,3 +1,10 @@
+## Commits
+### Delete  commits
+```
+git reset --hard [restore hash. ex:71c27777543ccfcb0376dcdd8f6777df055ef479]
+git push --force
+```
+
 ## Sync branches
 ```sh
 git fetch -p
