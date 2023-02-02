@@ -1,4 +1,13 @@
+## config reload without restart the service
+```sh
+nginx -s reload
+```
+
 ## reverse-proxy
+> in `/etc/nginx/conf.d/default.conf`
+> 
+> add this lines inside `location / {}`
+> 
 ```
 proxy_set_header Host $host;
 proxy_set_header X-Real-IP $remote_addr;
