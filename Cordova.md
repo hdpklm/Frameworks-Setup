@@ -29,9 +29,29 @@ cordova plugin rm [plugin-name]
 ```sh
 cordova plugin add cordova-admob
 ```
+> obtain api-key from google admob url: https://apps.admob.com/
+
+> add this in index.js in function onDeviceReady
+
 ```js
-// add this in index.js in function onDeviceReady
-// obtain api-key from google admob url: https://apps.admob.com/
-// and replacy in this object
-admob.createBannerView({publisherId: "api-key"});
+	// Set AdMobAds options:
+	admob.setOptions({
+		publisherId: "api-key",  // Required
+		// interstitialAdId: "ca-app-pub-XXXXXXXXXXXXXXXX/IIIIIIIIII",  // Optional
+		autoShowBanner: true,                                      // Optional
+		autoShowRInterstitial: false,                                     // Optional
+		autoShowRewarded: false,                                     // Optional
+		// tappxIdiOS: "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
+		// tappxIdAndroid: "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+		tappxShare: 0.5                                        // Optional
+	});
+
+	// Start showing banners (atomatic when autoShowBanner is set to true)
+	admob.createBannerView();
+
+	// Request interstitial ad (will present automatically when autoShowInterstitial is set to true)
+	admob.requestInterstitialAd();
+
+	// Request rewarded ad (will present automatically when autoShowRewarded is set to true)
+	admob.requestRewardedAd();
 ```
