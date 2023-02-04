@@ -26,6 +26,7 @@ cordova plugin rm [plugin-name]
 # Others
 
 ## admob: for google ads mobile
+> https://www.npmjs.com/package/cordova-admob
 ```sh
 cordova plugin add cordova-admob
 ```
