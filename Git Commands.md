@@ -41,6 +41,17 @@ git reset --hard [restore hash. ex:71c27777543ccfcb0376dcdd8f6777df055ef479]
 git push --force
 ```
 
+## <ins>Remove changes</ins>
+> in file
+```sh
+git checkout -- <file>
+```
+> all changes
+```sh
+git clean -df
+git checkout -- .
+```
+
 ## <ins>Sync branches</ins>
 ```sh
 git fetch -p
