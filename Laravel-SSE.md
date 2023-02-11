@@ -5,6 +5,16 @@
 composer require predis/predis --ignore-platform-req=ext-sodium
 ```
 
+> config/database.php
+```php
+	'redis' => [
+		// change from
+		'client' => env('REDIS_CLIENT', 'phpredis'),
+		// change to
+		'client' => env('REDIS_CLIENT', 'predis'),
+	]
+```
+
 > route/web
 ```php
 Route::get('/sse', function () {return view('sse');});
