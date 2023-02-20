@@ -46,7 +46,8 @@ mix
 	.js('resources/js/app.js', 'public/js')
 	.js('resources/js/react/app.js', 'public/js/react.js') // <-- add this line, it will create new file for react-js 
 	.react()
-	.sass('resources/sass/app.scss', 'public/css');
+	.sass('resources/sass/app.scss', 'public/css')
+	.version(); // <--- this is for change version at every build
 ```
 
 ## Add home page related to react
@@ -86,7 +87,8 @@ if (document.getElementById('root')) {
 
 	<body>
 		<div id="root"></div>
-		<script type="module" src="{{ asset('js/react.js') }}"></script>
+		<!-- [mix] is use for add hash at every build -->
+		<script type="module" src="{{ mix('/js/react.js') }}"></script>
 	</body>
 </html>
 ```
