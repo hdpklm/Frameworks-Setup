@@ -41,6 +41,8 @@ resources/js/components/Example.js
 - for default dir: disable `require('./components/app.js');` in `resources/js/app.js`
 - modify `webpack.mix.js`
 ```js
+// data are save on "mix-manifest.json"
+
 const mix = require('laravel-mix');
 mix
 	.js('resources/js/app.js', 'public/js')
