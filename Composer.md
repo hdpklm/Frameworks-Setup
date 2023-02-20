@@ -31,3 +31,23 @@ class ServiceProvider extends sp
 
 }
 ```
+
+
+> add this to "composer.json" file in Laravel progect you want to install the package inside
+
+> then run `composer upodate`
+```php
+"repositories": [
+	{
+		"type": "path",
+		"url": "path/to/package",
+		"options": {
+			"symlink": true
+		}
+	}
+],
+"require": {
+	"<user>/<package>": "@dev"
+}
+```
+
