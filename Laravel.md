@@ -18,6 +18,9 @@ cd project_name
 
 ## after change .env
   ```sh
+  php artisan optimize:clear
+  
+  # or 
   php artisan optimize
   php artisan cache:clear
   php artisan config:clear
