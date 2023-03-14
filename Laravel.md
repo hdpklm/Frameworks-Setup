@@ -11,11 +11,15 @@ cd project_name
   ```
 
 > create database migration and Model
-  ```
+  ```sh
   php artisan make:model [ModelName] --m
   php artisan make:model [ModelName] --migration
   ```
-
+> crear controlladores
+  ```sh
+  php artisan make:controller [ControllerName]
+  ```
+  
 ## build and create tables in database
 > before migrate db at first time, you must change this file for prevent this error
   ```sql
