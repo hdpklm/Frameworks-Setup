@@ -70,7 +70,7 @@ git show --summary
 ## <ins>Tags</ins>
 ### create
 ```sh
-git tag [name] -m [message] ([hash] to link to older hash)
+git tag -a [name] -m [message] ([hash] to link to older hash)
 ```
 
 ### sync
