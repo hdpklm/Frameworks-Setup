@@ -56,6 +56,14 @@ git checkout -- .
 ```sh
 git fetch -p
 ```
+  
+## <ins>Merge branch</ins>
+```sh
+git checkout master		# master is checked out
+git pull			# update local
+git merge new-feature		# merge branch new-feature into master
+git push			# changes on remote. Then checkout a feature branch
+```
 
 ## <ins>get current hash</ins>
 ```sh
