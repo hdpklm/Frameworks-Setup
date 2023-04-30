@@ -61,7 +61,7 @@ git fetch -p
 ```sh
 git checkout master		# master is checked out
 git pull			# update local
-git merge new-feature		# merge branch new-feature into master
+git merge --no-commit [branche]		# merge branch new-feature into master
 git push			# changes on remote. Then checkout a feature branch
 ```
 
