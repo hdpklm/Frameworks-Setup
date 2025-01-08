@@ -18,12 +18,19 @@ make -C ports/esp32 BOARD=ESP32_GENERIC_S3
 ```
 
 ## Add python module
-put the python file in `/app/micropython/ports/esp32/modules`
+- put your python module file in `/app/micropython/ports/esp32/modules` ex: `my_module.py`
+- also can add sub-directory like `/app/micropython/ports/esp32/modules/my_modules/my_funcs.py`
+- example:
+```python
+import my_module
+import my_modules.my_funcs
+```
+
 
 ## Add c module
-1. create a file in `micropython/ports/esp32/[module-name].c`
-2. add [file name] to compile list: `micropython/ports/esp32/esp32_common.cmake` add to `MICROPY_SOURCE_PORT`
-3. code:
+- create a file in `micropython/ports/esp32/[module-name].c`
+- add [file name] to compile list: `micropython/ports/esp32/esp32_common.cmake` add to `MICROPY_SOURCE_PORT`
+- code:
 ```c
 #include "py/obj.h"
 #include "py/runtime.h"
@@ -55,4 +62,9 @@ const mp_obj_module_t [mathlib] = {
 };
 
 MP_REGISTER_MODULE(MP_QSTR_[mathlib], [mathlib]);
+```
+- example:
+```python
+import mathlib
+mathlib.factorial(5)   # shuld return 120
 ```
