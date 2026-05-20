@@ -54,7 +54,11 @@ git checkout -- .
 
 ## <ins>Sync branches</ins>
 ```sh
+# sync branches
 git fetch -p
+
+# list remote branches
+git branch -a
 ```
   
 ## <ins>Merge branch</ins>
